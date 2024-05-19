@@ -30,7 +30,7 @@ def generate_ffmpeg_commands(segments, input_file, output_folder, bitrate):
             -ss {end} \
             -t {formatted_duration} -b:v {bitrate} \
             -bufsize:v {bitrate} \
-            {output_folder}segment_{i+1}.mp4 -mapmetadata -1")
+            {output_folder}segment_{i+1}.mp4")
 
     return ffmpeg_commands
 
@@ -53,7 +53,7 @@ def main():
     subprocess.run(f"ffmpeg -y -hwaccel cuda -safe 0 -f concat -i inputs.txt \
                    -c:v copy -c:a copy -b:v {bitrate} \
                    -bufsize:v {bitrate}  \
-                   {output_folder}output.mp4 -mapmetadata -1", shell=True)
+                   {output_folder}output.mp4", shell=True)
 
 
 if __name__ == "__main__":
