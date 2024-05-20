@@ -3,7 +3,7 @@ Fast ffmpeg python script that cuts out multiple segments from video based on ti
 
 
 ## timecodes format
-timecodes should be provided in this format: HH:SS:MM-HH:SS:MM, (start of the segment you need to cut - end of the segment)
+timecodes should be provided in this format: HH:MM:SS-HH:MM:SS, (start of the segment you need to cut - end of the segment)
 
 Example:
 ```
